@@ -1,0 +1,8 @@
+<launch>
+    <!-- 启动SLAM节点 -->
+    <include file="$(find robot_sim)/launch/car_mapping.launch" />
+    <!-- 运行move_base节点 -->
+    <include file="$(find robot_sim)/launch/path_planning.launch" />
+    <!-- 运行rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_sim)/config/robot_mapping.rviz"/>
+</launch>
